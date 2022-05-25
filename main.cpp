@@ -4,10 +4,10 @@
 
 using namespace std;
 
-int travellingSalesmanProblem(int graph[][4], int a)
+int travellingSalesmanProblem(int graph[][4], int a, int rows)
 {
     vector<int> distances;
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < rows; i++)
     {
         if (i != a)
         {
@@ -43,5 +43,7 @@ int main()
                        { 15, 35, 0, 30 },
                        { 20, 25, 30, 0 } };
 
-    cout << travellingSalesmanProblem(graph, 0);
+    int rows = sizeof(graph) / sizeof(graph[0]);
+
+    cout << travellingSalesmanProblem(graph, 0, rows);
 }
